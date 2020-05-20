@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO LIST</title>
+<style>
+
+    body, html {
+		margin: 0;
+		font-family: sans-serif;
+	}
+
+	.content {
+		margin: 0 auto;
+		padding-top: 100px;
+		width: 400px;
+    }
+
+    .form {
+        align-items: center;
+		margin-top: 20px;
+	}
+
+	#content {
+		margin-left: 60px;
+		width: 70%;
+	}
+
+	#submit {
+		margin-left: 140px;
+	}
+    
+</style>
+{% endblock %}
+
+{% block body %}
+
+
+<div class="content">
+
+	<h1 style="text-align: center;">Update Task</h1><br><br>
+
+    <div class="form">
+        <form action="/update/{{task.id}}" method="POST">
+            <input type="text" name="content" id="content" value="{{task.content}}"/><br><br><br>
+            <input type="submit" class="btn btn-secondary" value="Update Task" id="submit"/>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
